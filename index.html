@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="js/password.js" defer></script>
+    <script src="js/index.js"></script>
+    <link rel="stylesheet" href="css/index.css">
+    <title>Iniciar - Pedro Casella</title>
+</head>
+<body> 
+    <!-- Front Window -->
+    <section class="front" id="front" onclick="clickActive()">
+        <div class="front-window">  
+            <div class="infos" id="infos">
+
+            <!-- Data e Hora Div -->
+                <ul>
+                    <li><p id="hourMinutes">hora</p></li>
+                    <li><p id="data"></p></li>
+                    <script>
+                        const data = document.querySelector("#data");
+
+                        const date = new Date();
+
+                        const formatter = Intl.DateTimeFormat('pt-BR', {
+                            weekday: "long",
+                            year: "numeric",
+                            month: "long",
+                            day: "numeric",
+                        });
+
+                        data.innerHTML = formatter.format(date);
+                    </script>
+                </ul>
+
+            </div>
+        </div>
+    </section>
+    <section class="login" id="login">
+        <div class="login-div">
+            <center><img src="img/Perfil Profissional.png" alt=""><p id="userName">Pedro Casella</p></center>
+            <center>
+                <form action="">
+                    <input type="password" name="" id="senha" placeholder="PIN" class="pin">
+                </form>
+                <p class="optEnter" style="font-size: 15px;">Opções de entrada</p>
+            </center>
+        </div>
+    </section>
+    <!--DATA E HORA -->
+    <script>
+        var dataAtual = new Date();
+        var dia = dataAtual.getDate();
+        var mes = (dataAtual.getMonth() + 1);
+        var ano = dataAtual.getFullYear();
+        var horas = dataAtual.getHours();
+        var minutos = dataAtual.getMinutes();
+
+        var hour = horas + "" + ":" + minutos + ""
+
+        document.getElementById("hourMinutes").innerHTML = hour;
+    </script>
+</body>
+</html>
